@@ -1,5 +1,5 @@
 {% set name = "tb3py" %}
-{% set version = "2021.7.11" %}
+{% set version = "2026.11.3" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tb3py-{{ version }}.tar.gz
-  sha256: 6105173883cd6cbf8544413aedf5e5aa4f47bcaa62be9a8ec8c94a951345f9cd
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/tb3py-{{ version }}.tar.gz
+  sha256: 49ad4af27d51c9a3a93a556a16c0727ac8eb225d474ae5682516f87f35875426
 
 build:
   number: 0
