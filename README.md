@@ -1,11 +1,11 @@
-About tb3py
-===========
+About tb3py-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tb3py-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/usnistgov/tb3py
 
 Package license: NIST-PD
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tb3py-feedstock/blob/master/LICENSE.txt)
 
 Summary: tb3: an open-source software package for accurate and efficient electronic structure calculations using tight-binding (TB), including three-body interactions. https://pages.nist.gov/ThreeBodyTB.jl
 
@@ -13,10 +13,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14531&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/tb3py-feedstock?branchName=master">
+      <a href="https://github.com/conda-forge/tb3py-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/tb3py-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -39,17 +40,87 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `tb3py` can be installed with:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install tb3py
 ```
 
-It is possible to list all of the versions of `tb3py` available on your platform with:
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba install tb3py
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add tb3py
+# for installing globally
+pixi global install tb3py
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `tb3py` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search tb3py --channel conda-forge
 ```
+
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba search tb3py --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search tb3py --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
+
+```
+# Search all versions available on your platform:
+mamba repoquery search tb3py --channel conda-forge
+
+# List packages depending on `tb3py`:
+mamba repoquery whoneeds tb3py --channel conda-forge
+
+# List dependencies of `tb3py`:
+mamba repoquery depends tb3py --channel conda-forge
+```
+
+</details>
+
 
 
 About conda-forge
@@ -66,17 +137,17 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -103,7 +174,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/tb3py-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
